@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 # Genie Manual and API Testing 
  
 This repository contains the Postman collection and manual test cases for the Genie App project.  
