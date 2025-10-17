@@ -1,0 +1,1312 @@
+{
+	"info": {
+		"_postman_id": "dc7f87f4-5949-466a-81b9-7d2cd7ab8f9f",
+		"name": "GenieApp2025",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "30841250"
+	},
+	"item": [
+		{
+			"name": "Users",
+			"item": [
+				{
+					"name": "Get User Profile",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MTcyNSwiaWF0IjoxNzMyMTEzNTgyLCJleHAiOjE3MzQ3MDU1ODJ9.VnPocGxHzjn2ndyCds4-XPkn320mN7ar6dMnByAXnQQ",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": []
+						},
+						"url": {
+							"raw": "https://genie.aimtech.online/api/v1/users/profile",
+							"protocol": "https",
+							"host": [
+								"genie",
+								"aimtech",
+								"online"
+							],
+							"path": [
+								"api",
+								"v1",
+								"users",
+								"profile"
+							],
+							"query": [
+								{
+									"key": "",
+									"value": "",
+									"disabled": true
+								},
+								{
+									"key": "",
+									"value": "",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update User Profile",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{Token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "full_name",
+									"value": "Emi",
+									"type": "text"
+								},
+								{
+									"key": "phone_number",
+									"value": "55555",
+									"type": "text"
+								},
+								{
+									"key": "email",
+									"value": "emer@gmail.com",
+									"type": "text"
+								},
+								{
+									"key": "city_id",
+									"value": "1",
+									"type": "text"
+								},
+								{
+									"key": "profile_image",
+									"type": "file",
+									"src": "postman-cloud:///1efe25e4-210d-4fa0-b902-57e8edc63ed4"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{Server_URL}}/api/v1/users/profile",
+							"host": [
+								"{{Server_URL}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"users",
+								"profile"
+							]
+						},
+						"description": "This API endpoint allows users to update their profile information. The HTTP POST request should be made to [https://genie.aimtech.online/api/v1/users/profile](https://genie.aimtech.online/api/v1/users/profile). The request should include a form-data request body with the necessary parameters to update the user's profile.\n\n### Request Body\n\n- No specific parameters were provided for the form-data request body.\n    \n\n### Response\n\nThe response will contain the updated profile information for the user."
+					},
+					"response": []
+				},
+				{
+					"name": "Update User Password",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{Token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"current_password\": \"123456m\",\r\n    \"new_password\": \"123456m\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{Server_URL}}/api/v1/users/profile/update-password",
+							"host": [
+								"{{Server_URL}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"users",
+								"profile",
+								"update-password"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update User City",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{Token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"city_id\": \"1\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{Server_URL}}/api/v1/users/profile/update-city",
+							"host": [
+								"{{Server_URL}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"users",
+								"profile",
+								"update-city"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"auth": {
+				"type": "bearer",
+				"bearer": [
+					{
+						"key": "token",
+						"value": "{{token}}",
+						"type": "string"
+					}
+				]
+			},
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			]
+		},
+		{
+			"name": "Users Providers",
+			"item": [
+				{
+					"name": "Create  Provider",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MTcyNSwiaWF0IjoxNzMzODU2NDIwLCJleHAiOjE3MzY0NDg0MjB9.l38uT6cumGlQByBaDf2i3AUuTUhe4bW7Nw4SvXCvQHM",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "Mickey",
+									"type": "text"
+								},
+								{
+									"key": "description",
+									"value": "محل لعب أطفال وهدايا ",
+									"type": "text"
+								},
+								{
+									"key": "sub_category_id",
+									"value": "23",
+									"type": "text"
+								},
+								{
+									"key": "category_id",
+									"value": "22",
+									"type": "text"
+								},
+								{
+									"key": "city_id",
+									"value": "1",
+									"type": "text"
+								},
+								{
+									"key": "address",
+									"value": "1 streeet test adderess",
+									"type": "text"
+								},
+								{
+									"key": "map_lat",
+									"value": "12.3434",
+									"type": "text"
+								},
+								{
+									"key": "map_long",
+									"value": "12.4334",
+									"type": "text"
+								},
+								{
+									"key": "phone_number",
+									"value": "12345678901",
+									"type": "text"
+								},
+								{
+									"key": "landline",
+									"value": "35353434",
+									"type": "text"
+								},
+								{
+									"key": "email",
+									"value": "test@mail.com",
+									"type": "text"
+								},
+								{
+									"key": "facebook_url",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "instagram_url",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "website_url",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "youtube_url",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "whatsapp_number",
+									"value": "12345678910",
+									"type": "text"
+								},
+								{
+									"key": "worktimes",
+									"value": "[{\"day\":1,\"from\":1,\"to\":2},{\"day\":2,\"from\":0,\"to\":23}]",
+									"description": "1 => for sunday ,2=> for monday",
+									"type": "text"
+								},
+								{
+									"key": "provider_images",
+									"type": "file",
+									"src": "/C:/Users/emanr/OneDrive/Pictures/26f207ef9292fa0c75707bb60821eee6.jpg"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{Server_URL}}/api/v1/users-providers",
+							"host": [
+								"{{Server_URL}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"users-providers"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update  Provider",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "test provider name 2",
+									"type": "text"
+								},
+								{
+									"key": "description",
+									"value": "test description",
+									"type": "text"
+								},
+								{
+									"key": "sub_category_id",
+									"value": "1",
+									"type": "text"
+								},
+								{
+									"key": "category_id",
+									"value": "1",
+									"type": "text"
+								},
+								{
+									"key": "city_id",
+									"value": "1",
+									"type": "text"
+								},
+								{
+									"key": "address",
+									"value": "1 streeet test adderess",
+									"type": "text"
+								},
+								{
+									"key": "map_lat",
+									"value": "12.3434",
+									"type": "text"
+								},
+								{
+									"key": "map_long",
+									"value": "12.4334",
+									"type": "text"
+								},
+								{
+									"key": "phone_number",
+									"value": "0121232323",
+									"type": "text"
+								},
+								{
+									"key": "landline",
+									"value": "35353434",
+									"type": "text"
+								},
+								{
+									"key": "email",
+									"value": "test@mail.com",
+									"type": "text"
+								},
+								{
+									"key": "facebook_url",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "instagram_url",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "website_url",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "youtube_url",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "whatsapp_number",
+									"value": "0123232323",
+									"type": "text"
+								},
+								{
+									"key": "worktimes",
+									"value": "[{\"day\":1,\"from\":1,\"to\":2},{\"day\":2,\"from\":0,\"to\":24}]",
+									"description": "1 => for sunday ,2=> for monday",
+									"type": "text"
+								},
+								{
+									"key": "provider_images",
+									"type": "file",
+									"src": "/C:/Users/M.Fathy/Desktop/Files/Guinea-Pig-Macbook-Wallpaper.jpg"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{Server_URL}}/api/v1/users-providers/54",
+							"host": [
+								"{{Server_URL}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"users-providers",
+								"54"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create  Provider Offer",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MTcyNSwiaWF0IjoxNzM0OTU2Mzk4LCJleHAiOjE3Mzc1NDgzOTh9.driDBk41Ys9s_DSYnOA9_TxZCI_Sx7PyAcQwzKcT8RA",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "title",
+									"value": "New Year Sale",
+									"type": "text"
+								},
+								{
+									"key": "description",
+									"value": "New Year Sale",
+									"type": "text"
+								},
+								{
+									"key": "start_date",
+									"value": "2024-12-23",
+									"type": "text"
+								},
+								{
+									"key": "end_date",
+									"value": "2024-12-31",
+									"type": "text"
+								},
+								{
+									"key": "original_price",
+									"value": "500",
+									"type": "text"
+								},
+								{
+									"key": "offer_price",
+									"value": "350",
+									"type": "text"
+								},
+								{
+									"key": "discount_value",
+									"value": "30",
+									"type": "text"
+								},
+								{
+									"key": "create_offer_coupon",
+									"value": "0",
+									"type": "text"
+								},
+								{
+									"key": "limit_using_count",
+									"value": "2",
+									"type": "text"
+								},
+								{
+									"key": "send_notification",
+									"value": "1",
+									"type": "text"
+								},
+								{
+									"key": "offer_images",
+									"type": "file",
+									"src": "/E:/Images/FB_IMG_1708195503930.jpg"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{Server_URL}}/api/v1/users-providers/550/offers",
+							"host": [
+								"{{Server_URL}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"users-providers",
+								"550",
+								"offers"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Provider Offer",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "title",
+									"value": "test title",
+									"type": "text"
+								},
+								{
+									"key": "description",
+									"value": "test description",
+									"type": "text"
+								},
+								{
+									"key": "start_date",
+									"value": "2023-01-30",
+									"type": "text"
+								},
+								{
+									"key": "end_date",
+									"value": "2023-04-04",
+									"type": "text"
+								},
+								{
+									"key": "original_price",
+									"value": "122",
+									"type": "text"
+								},
+								{
+									"key": "offer_price",
+									"value": "100",
+									"type": "text"
+								},
+								{
+									"key": "discount_value",
+									"value": "30",
+									"type": "text"
+								},
+								{
+									"key": "create_offer_coupon",
+									"value": "0",
+									"type": "text"
+								},
+								{
+									"key": "limit_using_count",
+									"value": "2",
+									"type": "text"
+								},
+								{
+									"key": "send_notification",
+									"value": "1",
+									"type": "text"
+								},
+								{
+									"key": "offer_images",
+									"type": "file",
+									"src": [
+										"/C:/Users/M.Fathy/Desktop/Files/0bbcb8217d04ea883f8192251f7b0b93f49a0ee9efdf1cd9ba8df58a9d3fcfc8cc8b.jpg",
+										"/C:/Users/M.Fathy/Desktop/Files/Guinea-Pig-Macbook-Wallpaper.jpg",
+										"/C:/Users/M.Fathy/Desktop/Files/Guinea-Pig-Wallpaper-1920x1080-1.jpg"
+									]
+								}
+							]
+						},
+						"url": {
+							"raw": "{{server}}/api/v1/users-providers/9/offers/108",
+							"host": [
+								"{{server}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"users-providers",
+								"9",
+								"offers",
+								"108"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"auth": {
+				"type": "bearer",
+				"bearer": [
+					{
+						"key": "token",
+						"value": "{{token}}",
+						"type": "string"
+					}
+				]
+			},
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			]
+		},
+		{
+			"name": "Auth",
+			"item": [
+				{
+					"name": "Sign In",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"var response = pm.response.json();\r",
+									"pm.environment.set(\"token\", response.results.token);\r",
+									" "
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\": \"Emer@gmail.com\",\r\n    \"password\": \"123456m\",\r\n    \"device_token\": null\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://genie.aimtech.online/api/v1/auth/signin",
+							"protocol": "https",
+							"host": [
+								"genie",
+								"aimtech",
+								"online"
+							],
+							"path": [
+								"api",
+								"v1",
+								"auth",
+								"signin"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Sign Up",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"full_name\": \"Eman\",\r\n    \"phone_number\": \"01011010110\",\r\n    \"email\": \"Eman@AimTech.com\",\r\n    \"city_id\": 1,\r\n    \"password\": \"123456\",\r\n    \"device_token\": null\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://genie.aimtech.online/api/v1/auth/signup",
+							"protocol": "https",
+							"host": [
+								"genie",
+								"aimtech",
+								"online"
+							],
+							"path": [
+								"api",
+								"v1",
+								"auth",
+								"signup"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "System",
+			"item": [
+				{
+					"name": "Lookups",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{Server_URL}}/api/v1/system/lookup?lookup=cities",
+							"host": [
+								"{{Server_URL}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"system",
+								"lookup"
+							],
+							"query": [
+								{
+									"key": "lookup",
+									"value": "cities"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Providers",
+			"item": [
+				{
+					"name": "Top Providers",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Response time is less than 200ms\", function () {\r",
+									"    pm.expect(pm.response.responseTime).to.be.below(3000);\r",
+									"});\r",
+									"\r",
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MzAxLCJpYXQiOjE2ODA1NTYxOTksImV4cCI6MTY4MzE0ODE5OX0.PyLlrue0Hut7JAN-yDwpUqHq-OSmSY2WdzUiE6_--tw",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://genie.aimtech.online/api/v1/providers/top-providers?limit=10&page=1",
+							"protocol": "https",
+							"host": [
+								"genie",
+								"aimtech",
+								"online"
+							],
+							"path": [
+								"api",
+								"v1",
+								"providers",
+								"top-providers"
+							],
+							"query": [
+								{
+									"key": "limit",
+									"value": "10"
+								},
+								{
+									"key": "page",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Top Reviews Providers",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://genie.aimtech.online/api/v1/providers/top-reviews-providers?limit=10&page=1",
+							"protocol": "https",
+							"host": [
+								"genie",
+								"aimtech",
+								"online"
+							],
+							"path": [
+								"api",
+								"v1",
+								"providers",
+								"top-reviews-providers"
+							],
+							"query": [
+								{
+									"key": "limit",
+									"value": "10"
+								},
+								{
+									"key": "page",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Search Providers",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{Server_URL}}/api/v1/providers/search-providers?keyword=mickey 2&filter_category_id=&filter_sub_category_id&order_by=nearby&location=1,12.3434,12.4334&limit=10&page=1",
+							"host": [
+								"{{Server_URL}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"providers",
+								"search-providers"
+							],
+							"query": [
+								{
+									"key": "keyword",
+									"value": "mickey 2",
+									"description": "عوضية"
+								},
+								{
+									"key": "filter_category_id",
+									"value": "",
+									"description": "2"
+								},
+								{
+									"key": "filter_sub_category_id",
+									"value": null
+								},
+								{
+									"key": "order_by",
+									"value": "nearby",
+									"description": "popularity - rating - nearby - genie"
+								},
+								{
+									"key": "location",
+									"value": "1,12.3434,12.4334",
+									"description": "city_id,latitude,longitude"
+								},
+								{
+									"key": "limit",
+									"value": "10"
+								},
+								{
+									"key": "page",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Provider Details",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Response status code is 200\", function () {\r",
+									"  pm.response.to.have.status(200);\r",
+									"});\r",
+									"\r",
+									"\r",
+									"pm.test(\"Response time is less than 200ms\", function () {\r",
+									"  pm.expect(pm.response.responseTime).to.be.below(3000);\r",
+									"});\r",
+									"\r",
+									"\r",
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MTk5NSwiaWF0IjoxNzMyMTMyNDE1LCJleHAiOjE3MzQ3MjQ0MTV9.fxFQX2HtzJW1BMpz0ZcfwtC1Auf2ZWQH3E26Hlvzk8s",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{Server_URL}}/api/v1/providers/346",
+							"host": [
+								"{{Server_URL}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"providers",
+								"346"
+							],
+							"query": [
+								{
+									"key": "location",
+									"value": "1,12.3434,12.4334",
+									"description": "city_id,latitude,longitude",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "New Providers",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{Server_URL}}/api/v1/providers/new-providers?limit=10&page=2",
+							"host": [
+								"{{Server_URL}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"providers",
+								"new-providers"
+							],
+							"query": [
+								{
+									"key": "limit",
+									"value": "10"
+								},
+								{
+									"key": "page",
+									"value": "2"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"auth": {
+				"type": "bearer",
+				"bearer": [
+					{
+						"key": "token",
+						"value": "{{token}}",
+						"type": "string"
+					}
+				]
+			},
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			]
+		},
+		{
+			"name": "Categories",
+			"item": [
+				{
+					"name": "All Categories",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{Server_URL}}/api/v1/categories/all-categories?sub_category=true",
+							"host": [
+								"{{Server_URL}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"categories",
+								"all-categories"
+							],
+							"query": [
+								{
+									"key": "sub_category",
+									"value": "true"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "All Sub Categories",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{server}}/api/v1/categories/5/sub-categories",
+							"host": [
+								"{{server}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"categories",
+								"5",
+								"sub-categories"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Offers",
+			"item": [
+				{
+					"name": "Best Offers",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{server}}/api/v1/offers/best-offers?limit=10&page=1",
+							"host": [
+								"{{server}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"offers",
+								"best-offers"
+							],
+							"query": [
+								{
+									"key": "limit",
+									"value": "10"
+								},
+								{
+									"key": "page",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Interested Offers",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://genie.aimtech.online/api/v1/offers/interested-offers?limit=10&page=1",
+							"protocol": "https",
+							"host": [
+								"genie",
+								"aimtech",
+								"online"
+							],
+							"path": [
+								"api",
+								"v1",
+								"offers",
+								"interested-offers"
+							],
+							"query": [
+								{
+									"key": "limit",
+									"value": "10"
+								},
+								{
+									"key": "page",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "All Offers",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{Server_URL}}/api/v1/offers/all-offers?limit=10&page=1",
+							"host": [
+								"{{Server_URL}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"offers",
+								"all-offers"
+							],
+							"query": [
+								{
+									"key": "limit",
+									"value": "10"
+								},
+								{
+									"key": "page",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Offer Details",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{Server_URL}}/api/v1/offers/134",
+							"host": [
+								"{{Server_URL}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"offers",
+								"134"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "App Information",
+			"item": [
+				{
+					"name": "About App",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{Server_URL}}/api/v1/info/about-app",
+							"host": [
+								"{{Server_URL}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"info",
+								"about-app"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"auth": {
+		"type": "bearer",
+		"bearer": [
+			{
+				"key": "token",
+				"value": "{{token}}",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "Token",
+			"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MTcyNSwiaWF0IjoxNzM3ODgyNDEwLCJleHAiOjE3NDA0NzQ0MTB9.cOjkWvLAUuMdc89w_ie3_zvOEqXE8BZ0SNHEQsyEN7g",
+			"type": "default"
+		}
+	]
+}
