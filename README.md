@@ -9,7 +9,6 @@ This repository contains the Postman collection and manual test cases for the Ge
 🔗 Integration Testing (App, Web & Dashboard – making sure everything plays nice! 😉)
 
 💻 API & Web Testing
-
 🔍 Static Testing
 
 You can access the manual test cases from the following Google Sheet link: 
