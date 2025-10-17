@@ -3,12 +3,13 @@
  
 This repository contains the Postman collection and manual test cases for the Genie App project.  
  
-- GenieApp2025.postman_collection.json - API testing collection for Postman. 
-✨ Functional & Design Testing
+- GenieApp2025.postman_collection.json - API testing collection for Postman.
+  
+# ✨ Functional & Design Testing
 
-🔗 Integration Testing (App, Web & Dashboard – making sure everything plays nice! 😉)
+# 🔗 Integration Testing (App, Web & Dashboard – making sure everything plays nice! 😉)
 
-💻 API & Web Testing
+# 💻 API & Web Testing
 
 # 🔍 Static Testing
 
